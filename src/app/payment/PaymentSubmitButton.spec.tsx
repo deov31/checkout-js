@@ -129,4 +129,13 @@ describe('PaymentSubmitButton', () => {
         expect(component.text())
             .toEqual(languageService.translate('payment.paypal_credit_continue_action'));
     });
+
+    it('renders button with special label for Quadpay', () => {
+        const component = mount(
+            <PaymentSubmitButtonTest methodId="quadpay" />
+        );
+
+        expect(component.text())
+            .toEqual(languageService.translate('payment.quadpay_continue_action'));
+    });
 });
